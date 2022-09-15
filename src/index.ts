@@ -53,6 +53,7 @@ export const reactive = Vue.observable
 export const ref = function <T>(value: T): Ref<T> {
   return Vue.observable({ value })
 }
+
 export const toRef = function <T extends object, K extends keyof T>(obj: T, key: K): Ref<T[K]> {
   const ObjectRefImpl = {
     get value () {

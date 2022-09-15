@@ -1455,17 +1455,3 @@
   dependencies:
     "@vue/compiler-sfc" "2.7.10"
     "csstype" "^3.1.0"
-
-"vue2-composition-api@^1.0.1", "vue2-composition-api@^1.0.2":
-  "integrity" "sha512-cJbTHT8DGvogMm5oTpOkQwn74kXAxLsuseu2qJA/Pft5I7pWCqUMDsR99M0XaQjiw/eRcNcleTATbiqAOHnDCw=="
-  "resolved" "https://registry.npmjs.org/vue2-composition-api/-/vue2-composition-api-1.0.2.tgz"
-  "version" "1.0.2"
-  dependencies:
-    "@babel/core" "^7.19.1"
-    "@babel/preset-env" "^7.19.1"
-    "rollup" "^2.79.0"
-    "rollup-plugin-babel" "^4.4.0"
-    "rollup-plugin-dts" "^4.2.2"
-    "rollup-plugin-typescript" "^1.0.1"
-    "rollup-plugin-uglify" "^6.0.4"
-    "vue2-composition-api" "^1.0.1"

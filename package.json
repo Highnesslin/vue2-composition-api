@@ -1,0 +1,38 @@
+{
+  "name": "vue2-composition-api",
+  "version": "1.0.2",
+  "description": "Using only the composition api implemented with Vue2's existing API, there are no compatibility issues to be considered",
+  "author": "Lin<2212477518@qq.com>",
+  "license": "ISC",
+  "module": "dist/bundle-esm.js",
+  "types": "dist/type.d.ts",
+  "keywords": [
+    "vue2",
+    "composition-api",
+    "Android 4",
+    "IE 8"
+  ],
+  "files": [
+    "dist/*",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "rollup -c ./rollup.config.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "rollup": "^2.79.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.3",
+    "vue": "^2.6.10"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10"
+  }
+}

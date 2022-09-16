@@ -1,10 +1,11 @@
 import Vue from 'vue'
+import { DefaultData, DefaultMethods, DefaultComputed, PropsDefinition, DefaultProps } from 'vue/types/options'
 import { DefineComponentOptions, Ref, ToRefs } from './declare'
 
 /**
  * 生命周期相关
  */
-let currentInstance = null
+let currentInstance: Vue | null = null
 
 const createLifeCycle = function (name: string) {
   const Lifecycles = [
@@ -84,6 +85,8 @@ export const computed = function <T>(getter: () => T): () => T {
  * 入口文件相关
  */
 const proxyToThis = function (obj: object) {
+  if (!currentInstance) throw new Error('setup 异常')
+
   for (const key in obj) {
     if (key in currentInstance) {
       continue
@@ -124,12 +127,19 @@ const proxyToThis = function (obj: object) {
   }
 }
 
-export const defineComponent = function (options: DefineComponentOptions) {
+export const defineComponent = function <
+  V extends Vue,
+  Data=DefaultData<V>,
+  Methods=DefaultMethods<V>,
+  Computed=DefaultComputed,
+  PropsDef=PropsDefinition<DefaultProps>,
+  Props=DefaultProps
+>(options: DefineComponentOptions<V,Data,Methods,Computed,PropsDef,Props>) {
   const { beforeCreate, setup, ...restOptions } = options
 
   return {
     beforeCreate: setup
-      ? function () {
+      ? function (this: V) {
         beforeCreate && beforeCreate.call(this)
 
         currentInstance = this

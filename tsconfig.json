@@ -2,7 +2,7 @@
  "compilerOptions": {
    "baseUrl": ".",
    "module": "ES2015", // 指定生成哪个模块系统代码
-   "target": "ES2015", // 编译的目标是什么版本的
+   "target": "es2016", // 编译的目标是什么版本的
    "outDir": "./dist", // 输出目录
    "noImplicitAny": false,
    "moduleResolution": "Node",

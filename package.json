@@ -4,13 +4,14 @@
   "description": "Using only the composition api implemented with Vue2's existing API, there are no compatibility issues to be considered",
   "author": "Lin<2212477518@qq.com>",
   "license": "ISC",
-  "module": "dist/bundle-esm.js",
+  "module": "dist/bundle.js",
   "types": "dist/type.d.ts",
   "keywords": [
-    "vue2",
+    "Vue2",
+    "Vue3",
     "composition-api",
     "Android 4",
-    "IE 8"
+    "Object.defineProperty"
   ],
   "files": [
     "dist/*",
@@ -30,9 +31,17 @@
   },
   "devDependencies": {
     "typescript": "^4.8.3",
-    "vue": "^2.6.10"
+    "vue": "2.6.10"
   },
   "peerDependencies": {
     "vue": "^2.6.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Highnesslin/vue2-composition-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Highnesslin/vue2-composition-api/issues"
+  },
+  "homepage": "https://github.com/Highnesslin/vue2-composition-api"
 }

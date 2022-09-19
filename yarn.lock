@@ -1410,6 +1410,33 @@ update-browserslist-db@^1.0.5:
     escalade "^3.1.1"
     picocolors "^1.0.0"
 
+vue2-composition-api@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/vue2-composition-api/-/vue2-composition-api-1.0.4.tgz#c4efb22503103c7b67664071d3d1a7e90b123525"
+  integrity sha512-zQnUoDD2AAbsmecBiYgegkRtjxTmDiJUjU86B0OoJst0PCEgz6fDhcuvmW3UbCkISg5ttByLXYHlkBEMchVCGw==
+  dependencies:
+    "@babel/core" "^7.19.1"
+    "@babel/preset-env" "^7.19.1"
+    rollup "^2.79.0"
+    rollup-plugin-babel "^4.4.0"
+    rollup-plugin-dts "^4.2.2"
+    rollup-plugin-typescript "^1.0.1"
+    rollup-plugin-uglify "^6.0.4"
+
+vue2-composition-api@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/vue2-composition-api/-/vue2-composition-api-1.0.5.tgz#bcdfd57ac653f61cfc6e0cc2aa931702528b5997"
+  integrity sha512-0Ft3Gr6XW8NY4C4RCXJY8R5+SOoFhuw5L63NhMXO4/ZOMNrP3fQ/0hdmgG5hE3HBUC5c3po3lBrDdHM7alLAtA==
+  dependencies:
+    "@babel/core" "^7.19.1"
+    "@babel/preset-env" "^7.19.1"
+    rollup "^2.79.0"
+    rollup-plugin-babel "^4.4.0"
+    rollup-plugin-dts "^4.2.2"
+    rollup-plugin-typescript "^1.0.1"
+    rollup-plugin-uglify "^6.0.4"
+    vue2-composition-api "1.0.4"
+
 vue@2.6.10:
   version "2.6.10"
   resolved "https://registry.npmjs.org/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"

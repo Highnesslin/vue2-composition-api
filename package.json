@@ -1,10 +1,10 @@
 {
   "name": "vue2-composition-api",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Using only the composition api implemented with Vue2's existing API, there are no compatibility issues to be considered",
   "author": "Lin<2212477518@qq.com>",
   "license": "ISC",
-  "module": "dist/bundle.js",
+  "module": "dist/bundle-esm.js",
   "types": "dist/type.d.ts",
   "keywords": [
     "Vue2",

@@ -14,9 +14,9 @@ npm i vue2-composition-api
 
 ### defineComponent
 
-这是唯一一个与[Vue3 composition-api](https://www.npmjs.com/package/@vue/composition-api) 不同的API，在 **vue2-composition-api** 中 `defineComponent`是不可或缺的。
+这是唯一一个与 [Vue3](https://www.npmjs.com/package/@vue/composition-api) 不同的API，
 
-我们在内部完成了 `setup` 到 `this` 的绑定
+在 **vue2-composition-api** 中 `defineComponent` 是功能入口，因为我们在内部完成了 `setup` 到 `this` 的绑定。
 
 ```javascript
 import { defineComponent } from 'vue2-composition-api'

@@ -52,7 +52,8 @@ const isRef = Symbol('isRef')
 export const reactive = Vue.observable
 
 export const ref = function <T>(value: T): Ref<T> {
-  return Vue.observable({ value })
+  const state = Vue.observable({ value })
+  return toRef(state, 'value')
 }
 
 export const toRef = function <T extends object, K extends keyof T>(obj: T, key: K): Ref<T[K]> {

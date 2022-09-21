@@ -1,6 +1,6 @@
 {
   "name": "vue2-composition-api",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Using only the composition api implemented with Vue2's existing API, there are no compatibility issues to be considered",
   "author": "Lin<2212477518@qq.com>",
   "license": "ISC",
@@ -21,12 +21,12 @@
     "build": "rollup -c ./rollup.config.js"
   },
   "dependencies": {
-    "@babel/core": "^7.19.1",
-    "@babel/preset-env": "^7.19.1",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
     "rollup": "^2.79.0",
-    "rollup-plugin-babel": "^4.4.0",
+    "@rollup/plugin-babel": "^5.3.0",
     "rollup-plugin-dts": "^4.2.2",
-    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-uglify": "^6.0.4"
   },
   "devDependencies": {

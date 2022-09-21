@@ -11,13 +11,16 @@
     <script src="../node_modules/vue/dist/vue.min.js"></script>
     <script src="../dist/bundle-umd.js"></script>
     <script>
-        const { defineComponent, ref } = window['vue2-composition-api']
+        const { defineComponent, ref, watch } = window['vue2-composition-api']
         const options = defineComponent({
             el: '#app',
             setup(props) {
+                console.log('this', this)
                 const count = ref(0)
 
                 const add = () => count.value++
+
+                watch(count, () => console.log(count.value))
 
                 return {
                     count,
@@ -25,8 +28,6 @@
                 }
             },
             render(h) {
-                console.log('this', this)
-
                 return h('div', {
                     on: {
                         'click': this.add

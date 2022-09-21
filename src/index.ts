@@ -2,6 +2,8 @@ import Vue from 'vue'
 import { DefaultData, DefaultMethods, DefaultComputed, PropsDefinition, DefaultProps } from 'vue/types/options'
 import { DefineComponentOptions, Ref, ToRefs } from './declare'
 
+type VueInstance = InstanceType<typeof Vue>
+
 /**
  * 生命周期相关
  */
@@ -48,8 +50,13 @@ export const onDeactivated = createLifeCycle('deactivated')
  */
 const isComputed = Symbol('isComputed')
 const isRef = Symbol('isRef')
+const isReactive = Symbol('isReactive')
 
-export const reactive = Vue.observable
+export const reactive = function <T>(target: T): T {
+  const state = Vue.observable(target)
+  state[isReactive] = true
+  return state
+}
 
 export const ref = function <T>(value: T): Ref<T> {
   const state = Vue.observable({ value })
@@ -80,6 +87,30 @@ export const toRefs = function <T extends object>(obj: T): ToRefs<T> {
 export const computed = function <T>(getter: () => T): () => T {
   getter[isComputed] = true
   return getter
+}
+
+type watchParams = Parameters<VueInstance['$watch']>
+export const watch = function (key: ToRefs<any>, callback: watchParams[1], options: watchParams[2]) {
+  if (!currentInstance) throw new Error('watch 只能在 setup 中使用哦')
+
+  // watch 依赖的实例属性
+  if (!(currentInstance as any)._watchers) {
+    (currentInstance as any)._watchers = []
+  }
+
+  let expOrFn
+
+  if (isRef in key) {
+    expOrFn = () => key.value
+  } else if (isReactive in key) {
+    options = options || {}
+    options.deep = true
+    expOrFn = () => key
+  }
+
+  const unWatch = currentInstance.$watch(expOrFn, callback, options);
+
+  currentInstance.$once('hook:beforeDestroy', unWatch)
 }
 
 /**
@@ -145,7 +176,7 @@ export const defineComponent = function <
 
         currentInstance = this
 
-        const options = setup(currentInstance.$props)
+        const options = setup.call(currentInstance, currentInstance.$props)
 
         proxyToThis(options)
 

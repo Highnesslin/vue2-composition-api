@@ -1,6 +1,6 @@
-import typescript from 'rollup-plugin-typescript'
+import typescript from 'rollup-plugin-typescript2'
 import { uglify } from 'rollup-plugin-uglify';
-import babel from 'rollup-plugin-babel'
+import { babel } from '@rollup/plugin-babel'
 import dts from "rollup-plugin-dts"
 
 export default[
@@ -22,12 +22,20 @@ export default[
       vue: 'Vue'
     },
     plugins: [
-      typescript(),
+      typescript({
+        check: false
+      }),
       babel({
         babelrc: false,
         exclude: "node_modules/**",
         presets: [
-          ['@babel/preset-env', { modules: false }]
+          [
+              '@babel/preset-env',
+              {
+                  'corejs': 3,
+                  'useBuiltIns': 'usage'
+              }
+          ]
         ]
       }),
       uglify(),
@@ -44,8 +52,7 @@ export default[
       vue: 'Vue'
     },
     plugins: [
-      typescript(),
-      // dts(),
+      dts(),
     ]
   }
 ]

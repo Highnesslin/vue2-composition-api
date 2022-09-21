@@ -1,17 +1,16 @@
 {
  "compilerOptions": {
-   "baseUrl": ".",
-   "module": "ES2015", // 指定生成哪个模块系统代码
-   "target": "es2016", // 编译的目标是什么版本的
-   "outDir": "./dist", // 输出目录
-   "noImplicitAny": false,
-   "moduleResolution": "Node",
-   "strict": true,
-   "sourceMap": false,
-   "declaration": true,
-   "noImplicitOverride": true,
-   "noUnusedLocals": true,
-   "esModuleInterop": true
+  "target": "es5",
+  "lib": [
+    "ES2016"
+  ],
+  "module": "esnext",
+  "strict": true,
+  "moduleResolution": "node",
+  "esModuleInterop": true,
+  "skipLibCheck": true,
+  "forceConsistentCasingInFileNames": true,
+  "noImplicitAny": false
  },
  "include": [
    "src/**/*"

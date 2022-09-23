@@ -31,7 +31,7 @@ const createLifeCycle = function (name: string) {
     if (currentInstance.$options[name]) {
       currentInstance.$options[name].push(cb)
     } else {
-      currentInstance.$options[name] = cb
+      currentInstance.$options[name] = [cb]
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "vue2-composition-api",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Using only the composition api implemented with Vue2's existing API, there are no compatibility issues to be considered",
   "author": "Lin<2212477518@qq.com>",
   "license": "ISC",

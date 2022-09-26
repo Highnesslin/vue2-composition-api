@@ -106,6 +106,8 @@ export const watch = function (key: ToRefs<any>, callback: watchParams[1], optio
     options = options || {}
     options.deep = true
     expOrFn = () => key
+  } else {
+    expOrFn = key
   }
 
   const unWatch = currentInstance.$watch(expOrFn, callback, options);

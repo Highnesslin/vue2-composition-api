@@ -20,7 +20,7 @@
 
                 const add = () => count.value++
 
-                watch(count, () => console.log(count.value))
+                watch(() => count.value, () => console.log(count.value))
 
                 return {
                     count,
